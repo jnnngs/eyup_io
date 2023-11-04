@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eyup.io Landing Page</title>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+  }
+
+  .bg-image {
+    /* The image used */
+    background-image: url('background-image.jpg');
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /* Fixed background (creates parallel effect on scroll) */
+    background-attachment: fixed;
+  }
+
+  /* Position text in the center of the page/image */
+  .bg-text {
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* For the scrolling text effect */
+  #scroll-text {
+    position: fixed;
+    top: 0;
+    right: 100%;
+    width: auto;
+    white-space: nowrap;
+    font-size: 2em;
+    font-weight: bold;
+    color: #fff;
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-image"></div>
+
+<div class="bg-text">
+  <h1>Welcome to Eyup.io</h1>
+  <p>Your gateway to the digital universe.</p>
+</div>
+
+<div id="scroll-text">eyup.io</div>
+
+<script>
+// Using JavaScript to make the text "eyup.io" scroll in the background
+var scrollText = document.getElementById('scroll-text');
+
+function scrollBackground() {
+  // Get the current right position of the scroll-text element
+  var currentRight = parseInt(window.getComputedStyle(scrollText).right, 10);
+
+  // Calculate the new right position
+  var newRight = currentRight + 1;
+
+  // If the text has moved out of the screen, reset its position
+  if (newRight > window.innerWidth) {
+    newRight = -scrollText.offsetWidth;
+  }
+
+  // Set the new right position
+  scrollText.style.right = newRight + 'px';
+
+  // Continue the animation
+  requestAnimationFrame(scrollBackground);
+}
+
+// Start the scrolling effect
+scrollBackground();
+</script>
+
+</body>
+</html>
