@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  eyup_io:
+    container_name: eyup_io
+    image: reg.jnnn.gs/eyup_io:latest
+    restart: unless-stopped
+    ports:
+      - "8787:80"
