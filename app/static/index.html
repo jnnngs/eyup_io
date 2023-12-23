@@ -5,56 +5,89 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EyUp.io</title>
 <style>
-  body, html {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    overflow-x: hidden;
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.bg-image {
+  /* The image used */
+  background-image: url('background-image.png');
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* Fixed background (creates parallax effect on scroll) */
+  background-attachment: fixed;
+}
+
+.bg-text {
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+  font-size: 2vw; /* Responsive font size */
+}
+
+#scroll-text {
+  position: fixed;
+  top: 0;
+  right: 100%;
+  width: auto;
+  white-space: nowrap;
+  font-size: 2vw; /* Responsive font size */
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Responsive Design Adjustments */
+@media screen and (max-width: 768px) {
+  .bg-text {
+    font-size: 3vw; /* Adjusted font size for tablets */
+    padding: 10px;
+    width: 90%;
+  }
+
+  #scroll-text {
+    font-size: 3vw; /* Adjusted font size for tablets */
   }
 
   .bg-image {
-    /* The image used */
-    background-image: url('background-image.png');
-
-    /* Full height */
-    height: 100%;
-
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    /* Fixed background (creates parallel effect on scroll) */
-    background-attachment: fixed;
+    background-size: auto 100%; /* Adjust background size for better mobile view */
   }
+}
 
-  /* Position text in the center of the page/image */
+@media screen and (max-width: 480px) {
   .bg-text {
-    background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
-    color: white;
-    font-weight: bold;
-    border: 3px solid #f1f1f1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 80%;
-    padding: 20px;
-    text-align: center;
+    font-size: 4vw; /* Adjusted font size for mobile phones */
+    width: 95%;
   }
 
-  /* For the scrolling text effect */
   #scroll-text {
-    position: fixed;
-    top: 0;
-    right: 100%;
-    width: auto;
-    white-space: nowrap;
-    font-size: 2em;
-    font-weight: bold;
-    color: #fff;
+    font-size: 4vw; /* Adjusted font size for mobile phones */
   }
+
+  .bg-image {
+    /* Optional: Use a different background image for small devices */
+    background-image: url('background-image-mobile.png');
+  }
+}
+
 </style>
 </head>
 <body>
