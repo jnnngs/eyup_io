@@ -38,10 +38,10 @@ body, html {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  width: 80%;
+  width: 60%; /* Default width for large screens */
   padding: 20px;
   text-align: center;
-  font-size: 2vw; /* Responsive font size */
+  font-size: 1.5vw; /* Responsive font size */
 }
 
 #scroll-text {
@@ -58,9 +58,9 @@ body, html {
 /* Responsive Design Adjustments */
 @media screen and (max-width: 768px) {
   .bg-text {
-    font-size: 3vw; /* Adjusted font size for tablets */
-    padding: 10px;
-    width: 90%;
+    font-size: 3vw; /* Increased font size for tablets */
+    width: 80%; /* Increased width for tablets */
+    padding: 15px;
   }
 
   #scroll-text {
@@ -74,8 +74,9 @@ body, html {
 
 @media screen and (max-width: 480px) {
   .bg-text {
-    font-size: 4vw; /* Adjusted font size for mobile phones */
-    width: 95%;
+    font-size: 5vw; /* Further increased font size for mobile phones */
+    width: 90%; /* Increased width for mobile phones */
+    padding: 10px;
   }
 
   #scroll-text {
